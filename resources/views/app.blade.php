@@ -11,6 +11,7 @@
 
 <body>
     <div id="app"></div>
+    @vite('resources/js/app.js')
     <?php
     // <header>
     //     <div class="bg-black">
