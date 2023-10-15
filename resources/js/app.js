@@ -3,17 +3,18 @@ import { createApp } from 'vue/dist/vue.esm-bundler';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 import App from "./App.vue";
-
-const Home = { template: '<div>Home</div>' }
-const About = { template: '<div>About</div>' }
+import Index from "./pages/Index.vue";
+import BlogDetail from "./pages/BlogDetail.vue";
+import SearchList from "./pages/SearchList.vue";
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/about', component: About },
+  { path: '/', component: Index, name: 'index' },
+  { path: '/:id', component: BlogDetail, name: 'blogDetail' },
+  { path: '/search', component: SearchList, name: 'searchList' },
 ]
 const router = createRouter({
   history: createWebHashHistory(),
-  routes, // short for `routes: routes`
+  routes
 })
 
 const app = createApp(App);

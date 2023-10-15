@@ -24,6 +24,6 @@ class Blog extends Model
 
     public function likes(): BelongsToMany
     {
-        return $this->belongsToMany(Like::class, 'likes', 'blog_id', 'user_id')->withPivot('is_like');
+        return $this->belongsToMany(User::class, 'likes')->withPivot('is_like');
     }
 }

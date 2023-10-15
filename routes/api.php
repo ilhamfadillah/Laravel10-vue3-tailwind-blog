@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('/blog', BlogController::class);
+Route::post('/blog/search', [BlogController::class, 'search']);
